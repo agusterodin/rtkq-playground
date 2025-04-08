@@ -1,37 +1,37 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { z } from 'zod'
 
-const pokemonSchema = z.object({
-  // id: z.number(),
-  height: z.number(),
-  // weight: z.number()
+const Pokemon = z.object({
+  id: z.number(),
+  height: z.string()
 })
 
-console.log('pokemonSchema', pokemonSchema)
+const PokemonApiCustomError = z.object({
+  errorCode: z.string(),
+  shortErrorMessage: z.string(),
+  verboseErrorMessage: z.string()
+})
 
 export const pokemonApiSlice = createApi({
   baseQuery: fetchBaseQuery(),
   reducerPath: 'pokemonApi',
-  onSchemaFailure: (error, info) => {
-    console.error('error', info)
+  onSchemaFailure: error => {
+    // throw error
   },
   endpoints: builder => ({
     getPokemon: builder.query({
-      argSchema: z.string(),
-      responseSchema: pokemonSchema,
-      query: name => {
+      responseSchema: Pokemon,
+      query: (name: string) => {
         return {
           url: `https://pokeapi.co/api/v2/pokemon/${name}`
         }
       },
+      // errorResponseSchema: PokemonApiCustomError
       errorResponseSchema: z.object({
         status: z.literal('CUSTOM_ERROR'),
         error: z.string(),
-        data: z.object({
-          chuck: z.string()
-        })
-      }),
-      skipSchemaValidation: false
+        data: PokemonApiCustomError
+      })
     })
   })
 })
