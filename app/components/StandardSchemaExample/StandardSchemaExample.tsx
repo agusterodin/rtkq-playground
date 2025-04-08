@@ -14,9 +14,9 @@ export default function StandardSchemaExample() {
   else if (error && isFetchBaseQueryError(error) && error.status === 'TIMEOUT_ERROR') {
     return <div>Connection to server timed out.</div>
   } 
-  else if (error && isFetchBaseQueryError(error) && error.status === 'SCHEMA_ERROR') {
-    return <div>Response from server wasn't in expected format.</div>
-  }
+  // else if (error && isFetchBaseQueryError(error) && error.status === 'SCHEMA_ERROR') {
+  //   return <div>Response from server wasn't in expected format.</div>
+  // }
 
   return <div>{JSON.stringify(pokemon)}</div>
 }
