@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 const Pokemon = z.object({
   id: z.number(),
-  height: z.string()
+  height: z.number()
 })
 
 const PokemonApiCustomError = z.object({
