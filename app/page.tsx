@@ -1,12 +1,14 @@
 'use client'
 
-import Link from 'next/link'
+import { Toaster } from 'react-hot-toast'
+import StandardSchemaExample from './components/StandardSchemaExample/StandardSchemaExample'
 
 export default function IndexPage() {
   return (
-    <div className="flex flex-col">
-      <Link href="redux">RTKQ + Virtual</Link>
-      <Link href="tanstack">Tanstack Query + Virtual</Link>
-    </div>
+    <>
+      <title>Standard Schema Example</title>
+      <StandardSchemaExample />
+      <Toaster />
+    </>
   )
 }

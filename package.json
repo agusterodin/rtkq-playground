@@ -6,7 +6,7 @@
     "serve": "next start"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "https://pkg.csb.dev/reduxjs/redux-toolkit/commit/f93bec93/@reduxjs/toolkit",
+    "@reduxjs/toolkit": "https://pkg.csb.dev/reduxjs/redux-toolkit/commit/b9dc9238/@reduxjs/toolkit",
     "@tailwindcss/postcss": "4.0.0-beta.9",
     "@tanstack/react-query": "^5.64.1",
     "@tanstack/react-virtual": "^3.11.2",
@@ -15,11 +15,13 @@
     "next": "^15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
     "react-intersection-observer": "^9.14.0",
     "react-redux": "^9.2.0",
     "react-use": "^17.6.0",
     "tailwindcss": "4.0.0-beta.9",
-    "use-debounce": "^10.0.4"
+    "use-debounce": "^10.0.4",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.14",

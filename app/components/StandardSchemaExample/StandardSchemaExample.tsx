@@ -1,0 +1,22 @@
+import { useGetPokemonQuery } from '@/state/pokemonApi'
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query'
+import { useEffect } from 'react'
+import toast from 'react-hot-toast'
+
+function isFetchBaseQueryError(error: unknown): error is FetchBaseQueryError {
+  return Boolean((error as FetchBaseQueryError)?.status)
+}
+
+export default function StandardSchemaExample() {
+  const { data: pokemon, error } = useGetPokemonQuery('ditto')
+
+  if (error && isFetchBaseQueryError(error) && error.status === 'TIMEOUT_ERROR') {
+    return <div>Connection to server timed out.</div>
+  }
+
+  // if (error && isFetchBaseQueryError(error) && error.status === 'SCHEMA_ERROR') {
+  //   return <div>Response from server wasn't in expected format.</div>
+  // }
+
+  return <div>{JSON.stringify(pokemon)}</div>
+}
