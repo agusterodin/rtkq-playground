@@ -6,10 +6,12 @@
     "serve": "next start"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "https://pkg.csb.dev/reduxjs/redux-toolkit/commit/f93bec93/@reduxjs/toolkit",
+    "@headlessui/react": "^2.2.9",
+    "@reduxjs/toolkit": "^2.10.1",
     "@tailwindcss/postcss": "4.0.0-beta.9",
     "@tanstack/react-query": "^5.64.1",
     "@tanstack/react-virtual": "^3.11.2",
+    "clsx": "^2.1.1",
     "lodash": "^4.17.21",
     "miragejs": "^0.1.48",
     "next": "^15.1.2",
@@ -19,7 +21,8 @@
     "react-redux": "^9.2.0",
     "react-use": "^17.6.0",
     "tailwindcss": "4.0.0-beta.9",
-    "use-debounce": "^10.0.4"
+    "use-debounce": "^10.0.4",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.14",

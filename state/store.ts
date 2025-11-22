@@ -1,16 +1,14 @@
 import { combineSlices, configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
+import { campaignsApi } from '.'
 
-import notes from './notes'
-import { notesApiSlice } from './notesApi'
-
-const rootReducer = combineSlices({ notes, [notesApiSlice.reducerPath]: notesApiSlice.reducer })
+const rootReducer = combineSlices({ [campaignsApi.reducerPath]: campaignsApi.reducer })
 
 export const makeStore = () => {
   return configureStore({
     reducer: rootReducer,
     middleware: getDefaultMiddleware => {
-      return getDefaultMiddleware().concat(notesApiSlice.middleware)
+      return getDefaultMiddleware().concat(campaignsApi.middleware)
     }
   })
 }

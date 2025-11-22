@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import { StoreProvider } from './StoreProvider'
-import './components/ReduxToolkitExample/reduxToolkitMockServer'
 import '../index.css'
 
 interface Props {
